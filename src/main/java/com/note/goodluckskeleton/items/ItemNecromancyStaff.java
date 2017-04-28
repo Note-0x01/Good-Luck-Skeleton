@@ -30,6 +30,10 @@ public class ItemNecromancyStaff extends Item {
 	{
 		if(!worldIn.isRemote) {
 			EntityNecromancySkeleton skele = new EntityNecromancySkeleton(worldIn);
+			skele.setOwnerId(player.getUniqueID());
+			skele.setCustomNameTag(player.getName() +"'s Skeleton");
+			skele.setAlwaysRenderNameTag(true);
+			skele.setTamed(true);
 			skele.setLocationAndAngles(pos.getX(), pos.getY()+1,pos.getZ(), MathHelper.wrapDegrees(worldIn.rand.nextFloat() * 360.0F), 0.0F);
 			worldIn.spawnEntity(skele);
 		}

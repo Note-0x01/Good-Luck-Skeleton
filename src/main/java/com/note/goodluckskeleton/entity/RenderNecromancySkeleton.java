@@ -1,5 +1,7 @@
 package com.note.goodluckskeleton.entity;
 
+import com.note.goodluckskeleton.GoodLuckSkeleton;
+
 import net.minecraft.client.model.ModelSkeleton;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderBiped;
@@ -15,7 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderNecromancySkeleton extends RenderLiving<EntityNecromancySkeleton>
 {
-    private static final ResourceLocation SKELETON_TEXTURES = new ResourceLocation("textures/entity/skeleton/skeleton.png");
+    private static final ResourceLocation SKELETON_TEXTURES = new ResourceLocation(GoodLuckSkeleton.MODID + ":textures/entity/necromancyskeleton/necromancyskeleton.png");
 
     public RenderNecromancySkeleton(RenderManager renderManagerIn)
     {

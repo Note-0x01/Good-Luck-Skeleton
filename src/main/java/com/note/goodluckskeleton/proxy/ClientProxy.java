@@ -19,13 +19,12 @@ public class ClientProxy extends CommonProxy {
 		SkeletalItems.init();
 		SkeletalItems.modelInit();
         ResourceLocation resourceLocation = new ResourceLocation(GoodLuckSkeleton.MODID, "necromancy_skeleton");
-		EntityRegistry.registerModEntity(resourceLocation, EntityNecromancySkeleton.class, "necromancy_skeleton", 0, GoodLuckSkeleton.instance, 128, 214, true, 0, 0);
+		EntityRegistry.registerModEntity(resourceLocation, EntityNecromancySkeleton.class, "necromancy_skeleton", 0, GoodLuckSkeleton.instance, 128, 1, true, 0, 0);
 		RenderingRegistry.registerEntityRenderingHandler(EntityNecromancySkeleton.class, RenderNecromancySkeleton::new);
 	}
 	
 	@Override
 	public void init() {
-		System.out.print("REE");
 		
 	}
 }

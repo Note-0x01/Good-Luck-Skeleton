@@ -1,6 +1,6 @@
  {
     "parent": "item/handheld",
     "textures": {
-        "layer0":"phantasmagoria:items/necromancy_staff"
+        "layer0":"goodluckskeleton:items/necromancy_staff"
     }
 }
