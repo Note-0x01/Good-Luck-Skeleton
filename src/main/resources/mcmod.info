@@ -1,0 +1,16 @@
+[
+{
+  "modid": "goodluckskeleton",
+  "name": "Good Luck, Skeleton!",
+  "description": "A very basic Necromancy mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Note"],
+  "credits": "Note and Senor_Muffin",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
