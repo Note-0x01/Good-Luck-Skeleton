@@ -1,5 +1,7 @@
 package com.note.goodluckskeleton;
 
+import org.apache.logging.log4j.Logger;
+
 import com.note.goodluckskeleton.entity.EntityNecromancySkeleton;
 import com.note.goodluckskeleton.items.SkeletalItems;
 import com.note.goodluckskeleton.proxy.CommonProxy;
@@ -21,6 +23,8 @@ public class GoodLuckSkeleton
     public static final String MODID = "goodluckskeleton";
     public static final String VERSION = "0.0.1";
     
+    public static Logger logger;
+    
     @SidedProxy(clientSide = "com.note.goodluckskeleton.proxy.ClientProxy", serverSide = "com.note.goodluckskeleton.proxy.CommonProxy")
     public static CommonProxy proxy;
     
@@ -30,8 +34,8 @@ public class GoodLuckSkeleton
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+    	logger = event.getModLog();
     	proxy.preInit();
-        
     }
     
     @EventHandler
