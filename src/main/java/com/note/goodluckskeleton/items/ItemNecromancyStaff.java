@@ -28,6 +28,7 @@ public class ItemNecromancyStaff extends Item {
 		setRegistryName(name);
 		setCreativeTab(CreativeTabs.MATERIALS);
 		setMaxDamage(ConfigHandler.itemUses-1);
+		setMaxStackSize(1);
 		GameRegistry.register(this);
 	}
 	
