@@ -52,7 +52,7 @@ public class ItemNecromancyStaff extends Item {
 
 				player.sendMessage(new TextComponentString(message));
 			} else {
-				String message = String.format("You already have "+ ConfigHandler.skeletonMax + " skeletons!");
+				String message = String.format("You already have §7"+ ConfigHandler.skeletonMax + "§r skeletons!");
 
 				player.sendMessage(new TextComponentString(message));
 			}
