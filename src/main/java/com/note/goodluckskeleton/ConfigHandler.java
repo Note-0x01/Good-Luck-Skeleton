@@ -21,7 +21,7 @@ public class ConfigHandler {
 		
 		category = "Good Luck, Skeleton!";
 		skeletonMax = config.getInt("skeletonMax", category, 5, 1, 128, "The max amount of skeletons a user can spawn.");
-		itemUses = config.getInt("staffUses", category, 5, 1, -1, "The amount of times the Necromancy Staff can be used.");
+		itemUses = config.getInt("staffUses", category, 5, -1, 128, "The amount of times the Necromancy Staff can be used.");
 		
 		config.save();
 	}

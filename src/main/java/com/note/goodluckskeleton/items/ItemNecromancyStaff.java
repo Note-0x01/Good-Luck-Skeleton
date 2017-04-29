@@ -1,6 +1,7 @@
 package com.note.goodluckskeleton.items;
 
 import com.note.goodluckskeleton.ConfigHandler;
+import com.note.goodluckskeleton.GoodLuckSkeleton;
 import com.note.goodluckskeleton.ISkeleCount;
 import com.note.goodluckskeleton.SkeleCountProvider;
 import com.note.goodluckskeleton.entity.EntityNecromancySkeleton;
@@ -26,6 +27,7 @@ public class ItemNecromancyStaff extends Item {
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(CreativeTabs.MATERIALS);
+		GoodLuckSkeleton.logger.warn(ConfigHandler.itemUses);
 		setMaxDamage(ConfigHandler.itemUses-1);
 		GameRegistry.register(this);
 	}
