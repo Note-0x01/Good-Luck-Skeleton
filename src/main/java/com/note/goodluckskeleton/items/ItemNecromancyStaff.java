@@ -27,7 +27,6 @@ public class ItemNecromancyStaff extends Item {
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(CreativeTabs.MATERIALS);
-		GoodLuckSkeleton.logger.warn(ConfigHandler.itemUses);
 		setMaxDamage(ConfigHandler.itemUses-1);
 		GameRegistry.register(this);
 	}
@@ -41,7 +40,7 @@ public class ItemNecromancyStaff extends Item {
 				player.getHeldItem(hand).damageItem(1, player);
 				EntityNecromancySkeleton skele = new EntityNecromancySkeleton(worldIn);
 				skele.setOwnerId(player.getUniqueID());
-				skele.setCustomNameTag(player.getName() +"'s Skeleton" + "§7<FOLLOWING>");
+				skele.setCustomNameTag(player.getName() +"'s Skeleton" + " §7<FOLLOWING>");
 				skele.setName(player.getName() +"'s Skeleton");
 				skele.setAlwaysRenderNameTag(true);
 				skele.setTamed(true);

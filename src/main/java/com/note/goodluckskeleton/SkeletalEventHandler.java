@@ -16,7 +16,7 @@ import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
-public class EventHandler {
+public class SkeletalEventHandler {
 	@SubscribeEvent
 	public void onPlayerClone(PlayerEvent.Clone event) {
 		EntityPlayer player = event.getEntityPlayer();

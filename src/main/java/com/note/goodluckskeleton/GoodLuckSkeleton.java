@@ -6,10 +6,13 @@ import org.apache.logging.log4j.Logger;
 
 import com.note.goodluckskeleton.entity.EntityNecromancySkeleton;
 import com.note.goodluckskeleton.items.SkeletalItems;
+import com.note.goodluckskeleton.items.SkeletalRecipes;
 import com.note.goodluckskeleton.proxy.CommonProxy;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -42,6 +45,17 @@ public class GoodLuckSkeleton
     	configDir.mkdirs();
     	ConfigHandler.init(new File(configDir.getPath(), MODID + ".cfg"));
     	
+		SkeletalItems.init();
+		
+        ResourceLocation resourceLocation = new ResourceLocation(GoodLuckSkeleton.MODID, "necromancy_skeleton");
+		EntityRegistry.registerModEntity(resourceLocation, EntityNecromancySkeleton.class, "necromancy_skeleton", 0, GoodLuckSkeleton.instance, 128, 1, true, 0, 0);
+		
+		CapabilityManager.INSTANCE.register(ISkeleCount.class, new GoodLuckPlayer(), SkeleCount.class);
+		MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
+		MinecraftForge.EVENT_BUS.register(new SkeletalEventHandler());
+		
+		SkeletalRecipes.initRecipes();
+		
     	proxy.preInit();
     }
     

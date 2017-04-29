@@ -61,7 +61,7 @@ public class EntityNecromancySkeleton extends EntityTameable {
 	}
 	
 	public void setName(String n) {
-		name = n;
+		this.name = n;
 	}
 
 	@Override
@@ -155,9 +155,9 @@ public class EntityNecromancySkeleton extends EntityTameable {
             {
                 this.aiSit.setSitting(!this.isSitting());
                 if(this.isSitting()) {
-                	this.setCustomNameTag(this.name + "§7<FOLLOWING>");
+                	this.setCustomNameTag(this.name + " §7<FOLLOWING>");
                 } else {
-                	this.setCustomNameTag(this.name + "§7<SITTING>");
+                	this.setCustomNameTag(this.name + " §7<SITTING>");
                 }
                 this.isJumping = false;
                 this.navigator.clearPathEntity();

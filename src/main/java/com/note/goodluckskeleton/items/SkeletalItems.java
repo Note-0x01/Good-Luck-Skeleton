@@ -16,6 +16,6 @@ public class SkeletalItems {
 	
 	public static void modelInit() {
 		ModelLoader.setCustomModelResourceLocation(necromancy_staff, 0, new ModelResourceLocation(necromancy_staff.getRegistryName(), "inventory"));
-		//ModelLoader.setCustomModelResourceLocation(necromancy_core, 0, new ModelResourceLocation(necromancy_core.getRegistryName(), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(necromancy_core, 0, new ModelResourceLocation(necromancy_core.getRegistryName(), "inventory"));
 	}
 }
