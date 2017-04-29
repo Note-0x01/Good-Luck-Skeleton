@@ -26,6 +26,7 @@ public class ItemNecromancyStaff extends Item {
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(CreativeTabs.MATERIALS);
+		setMaxDamage(ConfigHandler.itemUses-1);
 		GameRegistry.register(this);
 	}
 	
@@ -35,6 +36,7 @@ public class ItemNecromancyStaff extends Item {
 		if(!worldIn.isRemote) {
 			ISkeleCount skele_count = player.getCapability(SkeleCountProvider.skele_count, null);
 			if(skele_count.getCount() != ConfigHandler.skeletonMax) {
+				player.getHeldItem(hand).damageItem(1, player);
 				EntityNecromancySkeleton skele = new EntityNecromancySkeleton(worldIn);
 				skele.setOwnerId(player.getUniqueID());
 				skele.setCustomNameTag(player.getName() +"'s Skeleton" + "§7<FOLLOWING>");
