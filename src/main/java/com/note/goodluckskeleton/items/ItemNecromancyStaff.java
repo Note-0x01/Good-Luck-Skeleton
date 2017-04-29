@@ -1,5 +1,6 @@
 package com.note.goodluckskeleton.items;
 
+import com.note.goodluckskeleton.ConfigHandler;
 import com.note.goodluckskeleton.ISkeleCount;
 import com.note.goodluckskeleton.SkeleCountProvider;
 import com.note.goodluckskeleton.entity.EntityNecromancySkeleton;
@@ -33,7 +34,7 @@ public class ItemNecromancyStaff extends Item {
 	{
 		if(!worldIn.isRemote) {
 			ISkeleCount skele_count = player.getCapability(SkeleCountProvider.skele_count, null);
-			if(skele_count.getCount() != 5) {
+			if(skele_count.getCount() != ConfigHandler.skeletonMax) {
 				EntityNecromancySkeleton skele = new EntityNecromancySkeleton(worldIn);
 				skele.setOwnerId(player.getUniqueID());
 				skele.setCustomNameTag(player.getName() +"'s Skeleton" + "§7<FOLLOWING>");
@@ -47,7 +48,7 @@ public class ItemNecromancyStaff extends Item {
 
 				player.sendMessage(new TextComponentString(message));
 			} else {
-				String message = String.format("You already have 5 skeletons!");
+				String message = String.format("You already have "+ ConfigHandler.skeletonMax + " skeletons!");
 
 				player.sendMessage(new TextComponentString(message));
 			}

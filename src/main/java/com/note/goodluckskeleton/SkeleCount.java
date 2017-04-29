@@ -6,7 +6,7 @@ public class SkeleCount implements ISkeleCount {
 	
 	@Override
 	public void add() {
-		if(this.skele_count < 5) {
+		if(this.skele_count < ConfigHandler.skeletonMax) {
 			this.skele_count++;
 		}
 	}

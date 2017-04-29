@@ -1,5 +1,7 @@
 package com.note.goodluckskeleton;
 
+import java.io.File;
+
 import org.apache.logging.log4j.Logger;
 
 import com.note.goodluckskeleton.entity.EntityNecromancySkeleton;
@@ -35,6 +37,11 @@ public class GoodLuckSkeleton
     public void preInit(FMLPreInitializationEvent event)
     {
     	logger = event.getModLog();
+    	
+    	configDir = new File(event.getModConfigurationDirectory() + "/" + MODID);
+    	configDir.mkdirs();
+    	ConfigHandler.init(new File(configDir.getPath(), MODID + ".cfg"));
+    	
     	proxy.preInit();
     }
     
@@ -48,6 +55,12 @@ public class GoodLuckSkeleton
     public void postInit(FMLPostInitializationEvent event)
     {
         
+    }
+    
+    
+    private static File configDir;
+    public static File getConfigDir() {
+    	return configDir;
     }
     
     
