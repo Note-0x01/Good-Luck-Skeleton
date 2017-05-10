@@ -41,18 +41,18 @@ public class ItemNecromancyStaff extends Item {
 				player.getHeldItem(hand).damageItem(1, player);
 				EntityNecromancySkeleton skele = new EntityNecromancySkeleton(worldIn);
 				skele.setOwnerId(player.getUniqueID());
-				skele.setCustomNameTag(player.getName() +"'s Skeleton" + " §7<FOLLOWING>");
+				skele.setCustomNameTag(player.getName() +"'s Skeleton" + " <FOLLOWING>");
 				skele.setName(player.getName() +"'s Skeleton");
 				skele.setAlwaysRenderNameTag(true);
 				skele.setTamed(true);
 				skele_count.add();
 				skele.setLocationAndAngles(pos.getX(), pos.getY()+1,pos.getZ(), MathHelper.wrapDegrees(worldIn.rand.nextFloat() * 360.0F), 0.0F);
 				worldIn.spawnEntity(skele);
-				String message = String.format("You now have §7%d§r skeletons.", (int) skele_count.getCount());
+				String message = String.format("You now have %d skeletons.", (int) skele_count.getCount());
 
 				player.sendMessage(new TextComponentString(message));
 			} else {
-				String message = String.format("You already have §7"+ ConfigHandler.skeletonMax + "§r skeletons!");
+				String message = String.format("You already have "+ ConfigHandler.skeletonMax + " skeletons!");
 
 				player.sendMessage(new TextComponentString(message));
 			}

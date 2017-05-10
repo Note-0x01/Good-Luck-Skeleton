@@ -155,9 +155,11 @@ public class EntityNecromancySkeleton extends EntityTameable {
             {
                 this.aiSit.setSitting(!this.isSitting());
                 if(this.isSitting()) {
-                	this.setCustomNameTag(this.name + " §7<FOLLOWING>");
+                	this.setAlwaysRenderNameTag(true);
+                	this.setCustomNameTag(this.name + " <FOLLOWING>");
                 } else {
-                	this.setCustomNameTag(this.name + " §7<SITTING>");
+                	this.setAlwaysRenderNameTag(false);
+                	this.setCustomNameTag(this.name + " <SITTING>");
                 }
                 this.isJumping = false;
                 this.navigator.clearPathEntity();
