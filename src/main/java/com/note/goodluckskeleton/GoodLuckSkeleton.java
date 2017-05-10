@@ -26,7 +26,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class GoodLuckSkeleton
 {
     public static final String MODID = "goodluckskeleton";
-    public static final String VERSION = "0.0.1";
+    public static final String VERSION = "1.0";
     
     public static Logger logger;
     
@@ -48,7 +48,7 @@ public class GoodLuckSkeleton
 		SkeletalItems.init();
 		
         ResourceLocation resourceLocation = new ResourceLocation(GoodLuckSkeleton.MODID, "necromancy_skeleton");
-		EntityRegistry.registerModEntity(resourceLocation, EntityNecromancySkeleton.class, "necromancy_skeleton", 0, GoodLuckSkeleton.instance, 128, 1, true, 0, 0);
+		EntityRegistry.registerModEntity(resourceLocation, EntityNecromancySkeleton.class, "necromancy_skeleton", 0, GoodLuckSkeleton.instance, 128, 1, true);
 		
 		CapabilityManager.INSTANCE.register(ISkeleCount.class, new GoodLuckPlayer(), SkeleCount.class);
 		MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
